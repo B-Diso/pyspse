@@ -8,7 +8,7 @@ from importlib import resources
 @lru_cache(maxsize=1)
 def load_categories():
     """Load category list from bundled JSON."""
-    with resources.files(__package__).joinpath("categories.json").open("r", encoding="utf-8") as f:
+    with resources.files(__package__).joinpath("categories.json").open("r", encoding="utf-8-sig") as f:
         return json.load(f)
 
 
